@@ -11,12 +11,10 @@ int main()
     case 10:
         cout << "Case 1";
         break;
-    case 20:
+    case 19 ... 21:
         cout << "Case 2";
         break;
-    case 30:
-    case 31:
-    case 32:
+    case 30 ... 32:
         cout << "Case 3";
         break;
     default:
