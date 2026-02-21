@@ -1,23 +1,19 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int main()
 {
-    vector<int> numbers = {10, 20, 30, 40, 50, 60, 70, 80};
-    vector<int>::iterator it = numbers.begin();
+    vector<int> nums = {10, 20, 30, 40};
+    vector<int>::iterator it = nums.begin();
 
-    cout << numbers.size() / -1 + numbers.size() << endl;
-    // Method One
-    advance(it, 4);
+    auto ite = nums.begin() + 1;
 
-    // Method Two
-    // it = numbers.end() + (numbers.size() / -1);
+    cout << "First Element Is: " << *it << "\n";
+    cout << "Second Element Is: " << *ite << "\n";
+    cout << "First Element Is: " << *nums.begin() << "\n";
 
-    // Method Three
-    // it += (numbers.size() / -1 + numbers.size());
+    nums.erase(it, it + 2);
 
-    cout << *it << "\n"; // 50
-    return 0;
+    cout << "First Element After Delete Is: " << *nums.begin() << "\n";
 }
