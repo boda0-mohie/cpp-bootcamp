@@ -1,19 +1,22 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-    vector<int> nums = {10, 20, 30, 40};
-    vector<int>::iterator it = nums.begin();
+    vector<int> numbers = {10, 20, 30, 40, 50, 60, 70, 80}; // 8
+    vector<int>::iterator it = numbers.begin();
 
-    auto ite = nums.begin() + 1;
+    // Write Method One
+    it = numbers.begin() + (*numbers.begin() - numbers.size()) * 2;
 
-    cout << "First Element Is: " << *it << "\n";
-    cout << "Second Element Is: " << *ite << "\n";
-    cout << "First Element Is: " << *nums.begin() << "\n";
+    // Write Method Two
+    // it = numbers.end() - ((*numbers.begin() - numbers.size()) + (*numbers.begin() - numbers.size()));
 
-    nums.erase(it, it + 2);
+    // Write Method Three
+    // advance(it, (*numbers.begin() - numbers.size()) + (*numbers.begin() - numbers.size()));
 
-    cout << "First Element After Delete Is: " << *nums.begin() << "\n";
+    cout << *it << "\n"; // 50
+    return 0;
 }
